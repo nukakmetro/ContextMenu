@@ -28,18 +28,16 @@ public protocol CustomMenuItemProtocol: Hashable, Sendable {
 
 public struct CustomMenuItem: CustomMenuItemProtocol {
     public let id: String = UUID().uuidString
+
     public var title: String
-    
     public var image: UIImage?
     public var imagePosition: ImagePosition?
-    
     public var customAction: (@Sendable () -> Void)?
-    
     public var customMenuItem: CustomMenu?
     public var needToCreateReturnButton: Bool?
     public var returnButtonType: ReturnButtonType?
     
-    init(
+    public init(
         title: String,
         image: UIImage? = nil,
         imagePosition: ImagePosition = .trailing,
@@ -51,7 +49,7 @@ public struct CustomMenuItem: CustomMenuItemProtocol {
         self.customAction = customAction
     }
     
-    init(
+    public init(
         title: String,
         image: UIImage? = nil,
         imagePosition: ImagePosition = .trailing,

@@ -45,7 +45,7 @@ public final class CustomContextMenuView: UIView {
     }()
     
     
-    init(preview: UIViewController,
+    public init(preview: UIViewController,
          menuConfiguration: MenuConfiguration,
          sourceView: UIView,
          parent: UIViewController,
@@ -68,7 +68,7 @@ public final class CustomContextMenuView: UIView {
         setupView()
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -151,7 +151,7 @@ public final class CustomContextMenuView: UIView {
         positionContent()
     }
     
-    func positionContent() {
+    public func positionContent() {
         //MARK: Content Size
         heightDiff = menu.frame.height + preview.view.frame.height + LayoutConstants.componentsPadding - bounds.height + safeAreaInsets.bottom
         if heightDiff > 0 {
@@ -243,16 +243,16 @@ public final class CustomContextMenuView: UIView {
         scaleRatioY = sourceView.frame.height / preview.view.frame.height
     }
     
-    func willDissmiss(){
+    public func willDissmiss(){
         sourceView.layer.opacity = 1
     }
     
-    func dismissFinalPosition() {
+    public func dismissFinalPosition() {
         appearanceStartPosition()
         contentView.layer.shadowOpacity = 0
     }
    
-    func appearanceFinalPosition() {
+    public func appearanceFinalPosition() {
         preview.view.transform = .identity
         preview.view.frame.origin = previewOrigin
         preview.view.layer.opacity = 1
@@ -270,7 +270,7 @@ public final class CustomContextMenuView: UIView {
         contentView.layer.shadowOpacity = 0.2
     }
     
-    func appearanceStartPosition() {
+    public func appearanceStartPosition() {
         sourceSnapshot.frame = sourceView.frame
         sourceSnapshot.frame.origin = .init(x: startPosition.x, y: startPosition.y + scrollView.contentOffset.y)
         sourceSnapshot.layer.opacity = 1
@@ -291,7 +291,7 @@ public final class CustomContextMenuView: UIView {
         contentView.layer.shadowOpacity = 0
     }
     
-    func highlightMenu(_ location: CGPoint){
+    public func highlightMenu(_ location: CGPoint){
         let location = self.convert(location, to: menu)
         if location.x >= 0,
            location.x <= menu.frame.width,
@@ -304,7 +304,7 @@ public final class CustomContextMenuView: UIView {
         }
     }
 
-    func selectMenu(_ location: CGPoint){
+    public func selectMenu(_ location: CGPoint){
         let location = self.convert(location, to: menu)
         if location.x >= 0,
            location.x <= menu.frame.width,

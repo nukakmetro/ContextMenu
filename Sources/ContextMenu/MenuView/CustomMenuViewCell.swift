@@ -29,13 +29,13 @@ public final class CustomMenuViewCell: UICollectionViewCell {
     }
     
     // MARK: - Initializers
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -89,7 +89,7 @@ public final class CustomMenuViewCell: UICollectionViewCell {
     }
     
     // MARK: - Configuration
-    func configure(with item: any CustomMenuItemProtocol, isLastItem: Bool) {
+    public func configure(with item: any CustomMenuItemProtocol, isLastItem: Bool) {
         switch item.imagePosition {
         case .leading:
             constraintsWhereImageFirst.forEach {
