@@ -7,4 +7,8 @@
 
 public struct CustomMenu: Sendable {
     public var sectionItems: [CustomSectionitem]
+
+    public init(sectionItems: [CustomSectionitem]) {
+        self.sectionItems = sectionItems
+    }
 }

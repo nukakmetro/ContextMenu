@@ -9,6 +9,12 @@ public struct MenuConfiguration {
     public var menu: MenuViewProtocol
     public var alignment: menuAlignment
     public var position: MenuPosition
+
+    public init(menu: MenuViewProtocol, alignment: menuAlignment, position: MenuPosition) {
+        self.menu = menu
+        self.alignment = alignment
+        self.position = position
+    }
 }
 
 public enum MenuPosition {
