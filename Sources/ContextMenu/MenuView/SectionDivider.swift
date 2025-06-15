@@ -7,13 +7,13 @@
 
 import UIKit
 
-class SectionDivider: UICollectionReusableView {
-    override init(frame: CGRect) {
+public class SectionDivider: UICollectionReusableView {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.08)
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

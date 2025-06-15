@@ -6,9 +6,9 @@
 //
 
 public struct MenuConfiguration {
-    var menu: MenuViewProtocol
-    var alignment: menuAlignment
-    var position: MenuPosition
+    public var menu: MenuViewProtocol
+    public var alignment: menuAlignment
+    public var position: MenuPosition
 }
 
 public enum MenuPosition {

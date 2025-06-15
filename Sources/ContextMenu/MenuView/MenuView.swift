@@ -27,7 +27,7 @@ public protocol MenuViewProtocol: UIView {
 // MARK: - MenuView
 public final class MenuView: UIView, MenuViewProtocol {
     // MARK: - Properties
-    var isScrollEnabled: Bool = true { // по умолчанию отключен
+    public var isScrollEnabled: Bool = true { // по умолчанию отключен
         didSet {
             collectionView.isScrollEnabled = isScrollEnabled
         }
@@ -55,11 +55,11 @@ public final class MenuView: UIView, MenuViewProtocol {
 
 
     // MARK: - Initialization
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    init(menu: CustomMenu, delegate: MenuViewDelegate? = nil) {
+    public init(menu: CustomMenu, delegate: MenuViewDelegate? = nil) {
         self.sectionItems = menu.sectionItems
         self.delegate = delegate
         super.init(frame: .zero)
@@ -79,7 +79,7 @@ public final class MenuView: UIView, MenuViewProtocol {
         updateSnapshot()
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -296,14 +296,14 @@ public final class MenuView: UIView, MenuViewProtocol {
         }
     }
 
-    func setupPanGestureRecognizer() {
+    public func setupPanGestureRecognizer() {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(_:)))
         guard let panGestureRecognizer else { return }
         addGestureRecognizer(panGestureRecognizer)
     }
 
     @objc
-    func handlePanGestureRecognizer(_ gestureRecognizer: UIPanGestureRecognizer) {
+    public func handlePanGestureRecognizer(_ gestureRecognizer: UIPanGestureRecognizer) {
         guard collectionView.bounds.contains(gestureRecognizer.location(in: self)) else {
             removeHighlight()
             return
@@ -323,8 +323,8 @@ public final class MenuView: UIView, MenuViewProtocol {
         }
     }
 
-    var previousIndexPath: IndexPath?
-    let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+    public var previousIndexPath: IndexPath?
+    public let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
 
     public func highlightItem(at location: CGPoint) {
         if let indexPath = collectionView.indexPathForItem(at: location) {
@@ -413,7 +413,7 @@ private extension MenuView {
     }
 }
 
-extension String {
+public extension String {
     func boundingRectangle(withMaximumWidth width: CGFloat, font: UIFont) -> CGRect {
         let attributes: [NSAttributedString.Key: Any] = [.font: font]
         let paragraphStyle = NSMutableParagraphStyle()

@@ -12,16 +12,16 @@ public final class CustomContextMenu: UIViewController {
     private var customView: CustomContextMenuView!
     private let transitionDelegate = ContextMenuTransitioningDelegate()
 
-    convenience init(_ previewController: UIViewController, menuConfiguration: MenuConfiguration, sourceView: UIView) {
+    public convenience init(_ previewController: UIViewController, menuConfiguration: MenuConfiguration, sourceView: UIView) {
         self.init(previewController, menuConfiguration: menuConfiguration, sourceView: sourceView, hasPreview: true)
     }
     
-    convenience init(_ previewView: UIView, menuConfiguration: MenuConfiguration, sourceView: UIView) {
+    public convenience init(_ previewView: UIView, menuConfiguration: MenuConfiguration, sourceView: UIView) {
         let vc = DummyPreviewVC(previewView)
         self.init(vc, menuConfiguration: menuConfiguration, sourceView: sourceView, hasPreview: true)
     }
     
-    convenience init(menuConfiguration: MenuConfiguration, sourceView: UIView) {
+    public convenience init(menuConfiguration: MenuConfiguration, sourceView: UIView) {
         let snapshot = sourceView.snapshotView(afterScreenUpdates: true) ?? UIView()
         let preview = DummyPreviewVC(snapshot)
         self.init(preview, menuConfiguration: menuConfiguration, sourceView: sourceView, hasPreview: false)
@@ -34,7 +34,7 @@ public final class CustomContextMenu: UIViewController {
         self.transitioningDelegate = transitionDelegate
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -47,11 +47,11 @@ public final class CustomContextMenu: UIViewController {
         super.viewDidLoad()
     }
    
-    func dismissFinalPosition() {
+    public func dismissFinalPosition() {
         customView.dismissFinalPosition()
     }
     
-    func willDissmiss() {
+    public func willDissmiss() {
         customView.willDissmiss()
     }
     
@@ -66,20 +66,19 @@ public final class CustomContextMenu: UIViewController {
         feedbackGenerator.impactOccurred()
     }
    
-    func appearanceFinalPosition() {
+    public func appearanceFinalPosition() {
         customView.appearanceFinalPosition()
     }
     
-    func appearanceStartPosition() {
+    public func appearanceStartPosition() {
         customView.appearanceStartPosition()
     }
-
     
-    func highlightMenu(_ location: CGPoint){
+    public func highlightMenu(_ location: CGPoint){
         customView.highlightMenu(location)
     }
 
-    func selectMenu(_ location: CGPoint){
+    public func selectMenu(_ location: CGPoint){
         customView.selectMenu(location)
     }
 }

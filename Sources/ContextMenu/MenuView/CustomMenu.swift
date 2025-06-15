@@ -6,5 +6,5 @@
 //
 
 public struct CustomMenu: Sendable {
-    var sectionItems: [CustomSectionitem]
+    public var sectionItems: [CustomSectionitem]
 }
