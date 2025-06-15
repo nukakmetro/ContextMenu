@@ -11,4 +11,8 @@ public protocol CustomSectionItemProtocol: Hashable, Sendable {
 
 public struct CustomSectionitem: CustomSectionItemProtocol {
     public var items: [CustomMenuItem] = []
+
+    public init(items: [CustomMenuItem]) {
+        self.items = items
+    }
 }

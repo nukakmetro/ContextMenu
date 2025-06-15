@@ -73,5 +73,3 @@ public struct CustomMenuItem: CustomMenuItemProtocol {
         hasher.combine(id)
     }
 }
-
-

@@ -51,7 +51,7 @@ public final class MenuView: UIView, MenuViewProtocol {
     }()
     private var dataSource: UICollectionViewDiffableDataSource<Int, CustomMenuItem>?
 
-    var panGestureRecognizer: UIPanGestureRecognizer?
+    public var panGestureRecognizer: UIPanGestureRecognizer?
 
 
     // MARK: - Initialization
