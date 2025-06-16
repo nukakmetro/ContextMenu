@@ -33,7 +33,7 @@ public struct ContextMenuConfiguration {
         self.previewProvider = previewProvider
         self.actionProvider = actionProvider
     }
-
+    @MainActor
     public func make(
         with identifier: NSCopying? = nil,
         previewTransform: ContextMenuContentPreviewTransform? = nil,
