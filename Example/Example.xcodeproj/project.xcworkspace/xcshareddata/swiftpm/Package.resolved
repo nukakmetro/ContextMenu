@@ -1,0 +1,15 @@
+{
+  "originHash" : "c9ae7229025667294e2fb6d6eca4575f7261c86622e65df98f53c3074c9e2a38",
+  "pins" : [
+    {
+      "identity" : "contextmenu",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nukakmetro/ContextMenu",
+      "state" : {
+        "revision" : "894889413d28ae09a2299978ad5ca9c72e2eac6c",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}
