@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nukakmetro/ContextMenu",
       "state" : {
-        "revision" : "7f46a295bcfa30e9c3212df9fb3482ff08fad445",
-        "version" : "1.0.3"
+        "revision" : "81e0fc3d955ce602e2fdfafc1c4fcb347513698f",
+        "version" : "1.0.4"
       }
     }
   ],
